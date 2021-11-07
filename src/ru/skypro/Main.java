@@ -85,15 +85,23 @@ public class Main {
         char[]  st = line.toCharArray();
         sb.append(st[0]);
         for (int i = 1; i < st.length; i++) {
-            if (st[i-1] != st[i])
-                sb.append(st[i]);
+            if (st[i-1] == st[i]) {
+                System.out.println("В строке найден дубль :" + st[i - 1]);
+                break;
+            }
+
         }
-        System.out.println(sb);
     }
     // Задание №5
     public static void sort (int arr1[]){
-        for (int i = 4; i > -1; i--) {
+        for (int i = 0; i < arr1.length / 2; i++) {
+            int temp = arr1[i];
+            arr1[i] = arr1[arr1.length - i - 1];
+            arr1[arr1.length - i - 1] = temp;
+        }
+        for (int i = 0; i < arr1.length; i++) {
             System.out.print(arr1[i]);
         }
+
     }
 }
